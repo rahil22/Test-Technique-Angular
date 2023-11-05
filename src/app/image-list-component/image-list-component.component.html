@@ -1,0 +1,11 @@
+<div class="item" *ngFor="let file of filteredFiles | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }; let i = index; let isLast = last; trackBy: trackByFn">
+    <div class="lazy-image" [attr.data-index]="i" ngxLazyLoad>
+      <img [src]="file.photo" loading="lazy" alt="Image" />
+      <div class="author">{{ file.author }}</div>
+      <div class="text">{{ file.text }}</div>
+    </div>
+  </div>
+  <div class="item" *ngFor="let file of filteredFiles | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }; let i = index; let isLast = last; trackBy: trackByFn">
+    <!-- ... -->
+  </div>
+  <pagination-controls (pageChange)="onPageChange($event)" ></pagination-controls>
